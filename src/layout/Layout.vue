@@ -95,9 +95,9 @@ export default defineComponent({
 
     // initialize html element classes
     HtmlClass.init();
-
     const pageTitle = computed(() => {
-      return store.getters.pageTitle;
+      console.log(store.getters.pageTitle)
+      return store.getters.pageTitle
     });
 
     const breadcrumbs = computed(() => {
@@ -127,9 +127,9 @@ export default defineComponent({
         MenuComponent.hideDropdowns(undefined);
 
         // check if current user is authenticated
-        if (!store.getters.isUserAuthenticated) {
-          router.push({ name: "sign-in" });
-        }
+        // if (!store.getters.isUserAuthenticated) {
+        //   router.push({ name: "sign-in" });
+        // }
 
         nextTick(() => {
           reinitializeComponents();

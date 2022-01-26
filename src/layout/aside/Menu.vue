@@ -157,7 +157,7 @@
   <!--end::Menu wrapper-->
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n/index";
 import { useRoute } from "vue-router";
@@ -171,7 +171,7 @@ export default defineComponent({
   setup() {
     const { t, te } = useI18n();
     const route = useRoute();
-    const scrollElRef = ref<null | HTMLElement>(null);
+    const scrollElRef = (ref < null) | (HTMLElement > null);
 
     onMounted(() => {
       if (scrollElRef.value) {

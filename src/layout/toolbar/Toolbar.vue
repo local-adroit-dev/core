@@ -56,13 +56,11 @@
         <!--end::Breadcrumb-->
       </div>
       <!--end::Page title-->
-
       <!--begin::Actions-->
       <div class="d-flex align-items-center py-1">
         <!--begin::Wrapper-->
         <div class="me-4">
           <!--begin::Menu-->
-          <Button></Button>
           <a
             href="#"
             class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
@@ -75,9 +73,9 @@
             </span>
             Sample Dropdown
           </a>
-<!-- 
+          <!-- 
           <Dropdown1></Dropdown1> -->
-          <Dropdown2></Dropdown2>
+          <Dropdown1></Dropdown1>
           <!--end::Menu-->
         </div>
         <!--end::Wrapper-->
@@ -105,8 +103,6 @@
 import { defineComponent } from "vue";
 import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
 import { toolbarWidthFluid } from "@/core/helpers/config";
-import Dropdown2 from "main/Dropdown1";
-import Button from "main/Button"
 export default defineComponent({
   name: "KToolbar",
   props: {
@@ -114,8 +110,7 @@ export default defineComponent({
     title: String,
   },
   components: {
-    Dropdown2,
-    Button
+    Dropdown1,
   },
   setup() {
     return {

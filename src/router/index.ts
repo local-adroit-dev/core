@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import store from "@/store";
 import { Mutations, Actions } from "@/store/enums/StoreEnums";
-
+import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -12,6 +12,15 @@ const routes: Array<RouteRecordRaw> = [
         path: "/dashboard",
         name: "dashboard",
         component: () => import("@/views/pages/Dashboard/Dashboard.vue"),
+      },
+      {
+        path: "/vue",
+        name: "vue",
+        component: () => import("main/VueMicroApp"),
+        beforeEnter: (to, from, next) => {
+          setCurrentPageTitle("Vue Micro App");
+          next();
+        },
       },
     ],
   },
